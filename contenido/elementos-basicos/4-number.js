@@ -39,5 +39,28 @@ console.log(resultado)
 console.log(resultado.toFixed(1))
 console.log(resultado === 0.3) // false
 
+            // OPERACIONES AVANZADAS
+const raizCuadrada = Math.sqrt(16) 
+const valorAbsoluto = Math.abs(-7)
+const aleatorio = Math.floor(Math.random()*20 - 5) // numero aleatorio entre 0 y 1
+
+        // console log (raizCuadra)
+        // console log (valorAbsoluto)
+console.log(raizCuadrada)        
 
 
+
+        // Lenguajes de programacxion
+
+
+
+            //compilados:
+           // java(JVM -> .JAVA _-_.class)
+
+
+            //interpretados:
+            // javascript --> lee > ejecuta
+
+            const numero = 2
+            const boolean = true
+            console.log(numero+boolean)
