@@ -16,4 +16,3 @@ if (numeroJugador === numeroSecreto) {
 }
  
 console.log(`El número secreto era ${numeroSecreto}`);
- 

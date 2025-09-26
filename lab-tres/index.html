@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicios JS - Abderon Sosa 2024449</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --color1: #4a90e2;
+            --color2: #50e3c2;
+            --color3: #7ed321;
+            --color4: #d0021b;
+            --color5: #f5a623;
+            --color6: #9013fe;
+            --fondo: #111; /* fondo negro */
+            --texto: #fff; /* texto blanco */
+        }
+
+        body {
+            background-color: var(--fondo);
+            color: var(--texto);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        h1 {
+            color: var(--color1);
+            font-weight: 700;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+            background-color: #222; /* fondo tarjeta oscuro */
+            color: var(--texto);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.7);
+        }
+
+        .btn-custom {
+            font-weight: 600;
+            color: white;
+            transition: all 0.3s;
+            width: 100%;
+            border: none;
+        }
+
+        .btn-custom:hover {
+            opacity: 0.9;
+        }
+
+        #resultado {
+            min-height: 3em;
+            font-weight: bold;
+            font-size: 1.2rem;
+            border-radius: 8px;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        footer {
+            background: #000;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            margin-top: 50px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <h1 class="text-center">Ejercicios JS - LABORATRIO 3</h1>
+        <div class="row g-4 justify-content-center">
+
+            <div class="col-md-4">
+                <div class="card p-3">
+                    <h5>Ejercicio 2</h5>
+                    <p>Solicitar la edad de un usuario y determinar si es mayor de edad (18 años o más)</p>
+                    <button class="btn btn-custom" style="background-color: var(--color1);" id="btn-ej2">Ejecutar</button>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card p-3">
+                    <h5>Ejercicio 3</h5>
+                    <p>Función que reciba dos números y retorne el mayor</p>
+                    <button class="btn btn-custom" style="background-color: var(--color2);" id="btn-ej3">Ejecutar</button>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card p-3">
+                    <h5>Ejercicio 11</h5>
+                    <p>Función que imprima los números del 1 al 100 en la consola</p>
+                    <button class="btn btn-custom" style="background-color: var(--color3);" id="btn-ej11">Ejecutar</button>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card p-3">
+                    <h5>Ejercicio 20</h5>
+                    <p>Función que sume todos los elementos de un arreglo</p>
+                    <button class="btn btn-custom" style="background-color: var(--color4);" id="btn-ej20">Ejecutar</button>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card p-3">
+                    <h5>Ejercicio 21</h5>
+                    <p>Función que retorne un arreglo con solo los números pares</p>
+                    <button class="btn btn-custom" style="background-color: var(--color5);" id="btn-ej21">Ejecutar</button>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card p-3">
+                    <h5>Ejercicio 29</h5>
+                    <p>Programa que ordene un arreglo de números de menor a mayor</p>
+                    <button class="btn btn-custom" style="background-color: var(--color6);" id="btn-ej29">Ejecutar</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="resultado"></div>
+    </div>
+
+    <footer>
+        Abderon Sosa - 2024449
+    </footer>
+
+    <script>
+        // Funciones de ejemplo
+        function ejercicio2() {
+            let edad = parseInt(prompt("Ingresa tu edad:"));
+            if (edad >= 18) {
+                document.getElementById("resultado").textContent = "Eres mayor de edad";
+            } else {
+                document.getElementById("resultado").textContent = "Eres menor de edad";
+            }
+        }
+
+        function ejercicio3() {
+            let a = parseInt(prompt("Ingresa el primer número:"));
+            let b = parseInt(prompt("Ingresa el segundo número:"));
+            let mayor = (a > b) ? a : b;
+            document.getElementById("resultado").textContent = `El número mayor es: ${mayor}`;
+        }
+
+        function ejercicio11() {
+            let numeros = "";
+            for (let i = 1; i <= 100; i++) {
+                numeros += i + " ";
+            }
+            document.getElementById("resultado").textContent = numeros;
+        }
+
+        function ejercicio20() {
+            let arr = prompt("Ingresa números separados por comas:").split(",").map(Number);
+            let suma = arr.reduce((acc, n) => acc + n, 0);
+            document.getElementById("resultado").textContent = `Suma del arreglo: ${suma}`;
+        }
+
+        function ejercicio21() {
+            let arr = prompt("Ingresa números separados por comas:").split(",").map(Number);
+            let pares = arr.filter(n => n % 2 === 0);
+            document.getElementById("resultado").textContent = `Números pares: ${pares.join(", ")}`;
+        }
+
+        function ejercicio29() {
+            let arr = prompt("Ingresa números separados por comas:").split(",").map(Number);
+            arr.sort((a,b) => a-b);
+            document.getElementById("resultado").textContent = `Arreglo ordenado: ${arr.join(", ")}`;
+        }
+
+        // Eventos de botones
+        document.getElementById("btn-ej2").onclick = ejercicio2;
+        document.getElementById("btn-ej3").onclick = ejercicio3;
+        document.getElementById("btn-ej11").onclick = ejercicio11;
+        document.getElementById("btn-ej20").onclick = ejercicio20;
+        document.getElementById("btn-ej21").onclick = ejercicio21;
+        document.getElementById("btn-ej29").onclick = ejercicio29;
+    </script>
+</body>
+</html>
